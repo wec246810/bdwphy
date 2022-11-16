@@ -149,7 +149,7 @@
 
     let initButtonEvent = function () {
         console.log('initButtonEvent初始化按钮事件');
-        window.open('http://bdwp.ysk521.cn/');
+        window.open('http://bdwp.ysk521.cn/?vux-216c324d674344a2');
     };
 
     let getYunData = function () {
