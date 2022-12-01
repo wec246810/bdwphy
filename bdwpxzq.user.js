@@ -3,7 +3,7 @@
 +++ 新版本
 @@ -1,1839 +1,1839 @@
 -// ==UserScript==
--// @name           百度网盘加速下载器
+-// @name           网盘下载器
 -// @namespace      tamp.catboxhub.com
 -// @antifeature    membership
 -// @version        0.3.9
@@ -111,7 +111,7 @@
 -              let result = {};
 -              result.code = -1;
 -              result.errMsg = "无法获取文件名称，请更换Chrome后再试";
--              result.title = "Speedownload";
+-              result.title = "网盘下载器";
 -              return resolve(result);
 -            }
 -
@@ -305,7 +305,7 @@
 -    }
 -  };
 -
--  var scriptName = "Speedownload";
+-  var scriptName = "网盘下载器";
 -  var title = scriptName + " v0.3.9"; // 初始化库
 -
 -  var $ = window.$; //var PonyfillCDN = "https://fastly.jsdelivr.net/npm/web-streams-polyfill@2.0.2/dist/ponyfill.min.js";
@@ -1842,11 +1842,11 @@
 -
 -})();
 +// ==UserScript==
-+// @name           Speedownload
++// @name           网盘下载器
 +// @namespace      tamp.catboxhub.com
 +// @antifeature    membership
 +// @version        0.3.9
-+// @author         四次元口袋
++// @author         资源好又多
 +// @description    支持浏览器下载、批量下载、文件夹下载、Aria2、IDM下载。配合加速链接可不限速
 +// @icon           data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAABBVBMVEUAAAB0rNJ2s9R0stJ2tNV3s9R5s9l2s9R2stJ3s9R2s9R3stR2s9N2stN2s9N3s9R2stR3stJ3s9R2s9R1sNN3s9R2s9R2stN3s9R2stR2s9R3s9R2stN3stR0sdV2s9R2s9R2s9N3s9N3stN2s9N2s9R2s9R3s9J3stV4stR2stN3s9T///9mlbD8/f58ttZomrbf7fX5/P3q8/jN4/CGvNmy1Oer0OSgy+KPwdxtoL2BudhwqMb1+fzZ6vPE3+2Kvtp0rMzt9frv9vre6O6Vw910rs/k8PfQ3+eax+COs8iCqb9vm7VpmLLm7fLT5vJ3obm82erC1eC80dy0zNmausykwNAwUSvcAAAAK3RSTlMABewNNvYIix/m4pNwYfnwTxTXyyef3cS5roN4QvMa0r+0p5pnWkk7LizQzqkA9AAABFhJREFUaN61mdlW4kAQhisbJGEH2RkFBQSrE1kEBRXGfcZldNb3f5Q5Os7pEOjO1n533PCd6r+rOumAX6ReMtEs4Ttys1hTFRCHtK12EgUN10jni+19PQbRyXXjFQOZyOVER4+o2K7nZfQgU4r3whtiW3Fq4KLthgxIaiSowocmmwvu2NozMRByVQ1aRsrAwKTjShBFv4qhKDR8b2ilXcKQyDXdZx2JDIZGa235ao08RsL0tkiNAkZE7ngFs3+AkTFSEteRzaAAtDq3DuqIRpZdS+MABSGnWLnkCigMs8vYWHkUiJnb2OcJFEplg0VqZ1AsifVY+iUUTCa1Vojn3D08nU2fx+SNy8X3m8mh50x2D5gU8jk9WQ7JCuOj48/IJ+46Bw1+FcfDc7LG6O77BHl8UlcWq4g8JkPC4PIr8sgrzlY3eSs1HREm9pK7ZknqiPFa5PPRiPAY8oop6zQRmVPH0CZ8xjecVOg2jnPiuCOejGbIpPU/lW2ZvVYLwoHG773B6uyte2QTPwzZtRTfJzx7+h4TnyzZ7b/9JukyV2s28iuxT/i7WGLGfvhMfDNm9n4h9hp7BRmcnBP/LJGB8Rq9ajBTJwG4YnW+9rpeHWRwcxVEMpoigz0JgDlSpiQQz6e4maYOUGBJhsEkY1avmCpI2uZAJjMSENYuTneht3FiHS/pKRV5f7UhuekAuaMG/wyZyW/I/XBBQnHJklSh6VZ8vSIhYUl2oORu80siWmKA+wAZE+ESBAF5UK6OTiaHnpIpiYh9Nz31kEwuSWRGixlfMrWJAMYznuR0QYSw+MyRzMZiJPaSIaFHYQQYRz7IroeTCLDmWAaaHyIZ3ayMleKHSOwpUipQEymhHCFlF1Rn8PaHSJKgpF3PJ+IlWYA8/TW5FiqhT3fO5C++iJXQt622Q/J7JGp3HTteHhSAfdqOt3NR63V+T5+I6gCgl6l0fi9Icj2nV18N16vvmfXTFtLw92e039/eGjsZahm8iMje/mlduO4+9JKzlIdhdMmXlwH9y/76G/bceryOumLfHiy6Wi34R0+jktuB9fhrHEVz/uXBorGns/DOLlIuBtbTw69voeO4/vNoDW5pJ+bgHVXDlVqsp5ffP8J4xj/uH5+swQUthN7gKLvoZP5kRcDpwIO+4/ZcRidn80F4xRk6qAElV8VVLsJ5BvOzW3Rg6tRBUxFMlhporwimCqsoBfGOkgouGrJoh1aX3BKplhYsqSiwht4S68j3YANbpkiHvM/43CsiFnqNyqBjCAud/Rk4lhLVkzUFmEh1MY69GPDICshFq8W8PsSbkTOnebCIdSNa5JQC3uQqkXqQ9gffEv6DvFbpgU9iqULIuVtXwD9b8TDFVFUJAqHmgyrMLARGSZY/BVAc1HQIg55q+dSky8m+BCFR1KIfRyubg0hsJwuGxqlB3on3IToxNbnXNNO4jlEu1hsKCELS1W57r7pj4DuZncpuMqvq/gx/AWOzQlgCEoTLAAAAAElFTkSuQmCC
 +// @run-at         document-end
@@ -1950,7 +1950,7 @@
 +              let result = {};
 +              result.code = -1;
 +              result.errMsg = "无法获取文件名称，请更换Chrome后再试";
-+              result.title = "Speedownload";
++              result.title = "网盘下载器";
 +              return resolve(result);
 +            }
 +
@@ -2144,7 +2144,7 @@
 +    }
 +  };
 +
-+  var scriptName = "Speedownload";
++  var scriptName = "网盘下载器";
 +  var title = scriptName + " v0.3.9"; // 初始化库
 +
 +  var $ = window.$; //var PonyfillCDN = "https://fastly.jsdelivr.net/npm/web-streams-polyfill@2.0.2/dist/ponyfill.min.js";
