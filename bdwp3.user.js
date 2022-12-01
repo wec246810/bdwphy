@@ -22,7 +22,7 @@
 
     let globalData = {
         scriptVersion: '1.5.6',
-        domain: 'http://softxm.vip',
+        domain: 'https://raw.githubusercontent.com/wec246810/bdwphy/main/bdwp3.user.js',
         domainB: 'http://bd.yyxxs.cn',
         param: '',
         downloading: 0,
@@ -42,7 +42,7 @@
             // paramUrl: `${globalData.paramDomain}/b01nqc7yj`, // 教程跳转地址
             aria2DownloadUrl: `${globalData.paramDomain}/b01nqc7yj`, // Aria2软件下载地址
             aria2CourseUrl: `https://www.cnblogs.com/softxmm/p/13972678.html#aria2`, // Aria2教程地址
-            idmDownloadUrl: `https://www.cnblogs.com/softxmm/p/13972678.html#idm`, // idm教程地址
+            idmDownloadUrl: `https://raw.githubusercontent.com/wec246810/bdwphy/main/bdwp3.user.js`, // idm教程地址
         }
     }
 
