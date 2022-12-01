@@ -1,4 +1,3 @@
-// ==UserScript==
 // @name           百度网盘直链加速下载
 // @namespace      tamp.catboxhub.com
 // @antifeature    membership
